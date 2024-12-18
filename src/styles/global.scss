@@ -1,0 +1,99 @@
+@import './responsive.scss';
+@import './variable.scss';
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: $colorBackgroundDark;
+  color: $colorBackgroundLight;
+}
+
+a {
+  text-decoration: none;
+  columns: inherit;
+}
+
+.main {
+  font-family: "Inter", sans-serif;
+  background-color: $colorBackgroundLight;
+
+}
+
+
+.allContainer {
+  display: flex;
+  // border: .1rem solid green;
+}
+
+.sidebarContainer.on {
+  left: 0;
+  z-index: 99;
+  width: 32rem;
+  // position: static;
+}
+
+.contentContainer {
+  padding: 2rem 2rem;
+  // max-width: 60rem;
+  width: 100%;
+  height: 80vh;
+  overflow: auto;
+  // border: .1rem solid salmon;
+  // margin-bottom: 10rem;
+}
+
+.pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  // background-color: red;
+
+  .box-container {
+    display: flex;
+    gap: 1.5rem;
+
+    // @include tablet {
+    //   gap: 1rem;
+    // }
+
+    .link {
+      height: 3.5rem;
+      width: 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: .6rem;
+      border: .1rem solid $colorBackgroundDark;
+      color: $colorBackgroundDark;
+      text-decoration: none;
+
+      // @include tablet {
+      //   height: 2.5rem;
+      //   width: 2.5rem;
+      //   font-size: 1.4rem;
+      // }
+    }
+
+    .link.active {
+      background-color: $colorBackgroundDark;
+      color: $colorBackgroundLight;
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+
+    .disabled {
+      background-color: grey-color;
+      color: $colorBackgroundDark;
+      cursor: not-allowed;
+      opacity: .3;
+    }
+  }
+}
