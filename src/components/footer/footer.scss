@@ -1,0 +1,29 @@
+/*
+Author: Wanda Azhar
+Location: Michigan, USA
+Contact: wandaazhar@gmail.com
+*/
+
+@import '../../styles/variable.scss';
+@import '../../styles//responsive.scss';
+
+.footer {
+  // background-color: #0097B2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+
+  .credits {
+    display: flex;
+    font-size: 1.4rem;
+    color: grey;
+    text-align: center;
+    line-height: 2.5rem;
+  }
+}

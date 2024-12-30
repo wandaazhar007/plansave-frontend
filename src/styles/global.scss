@@ -1,3 +1,9 @@
+/*
+Author: Wanda Azhar
+Location: Michigan, USA
+Contact: wandaazhar@gmail.com
+*/
+
 @import './responsive.scss';
 @import './variable.scss';
 
@@ -95,5 +101,47 @@ a {
       cursor: not-allowed;
       opacity: .3;
     }
+  }
+}
+
+.authMain {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(225deg, #86679f, #268cf8, #1f5095, #c6e8b9, #51c598);
+  background-size: 300% 300%;
+  animation: gradient-animation 30s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  font-family: "Inter", sans-serif;
+
+  .authContainer {
+    // border: .1rem solid salmon;
+    background: #fff;
+    // padding: 4rem;
+    // width: 80rem;
+    display: flex;
+    flex-wrap: wrap;
+    // gap: 2rem;
+    justify-content: center;
+
+    @include tablet {
+      background: transparent
+    }
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }

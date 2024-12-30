@@ -1,0 +1,78 @@
+/*
+Author: Wanda Azhar
+Location: Michigan, USA
+Contact: wandaazhar@gmail.com
+*/
+
+@import '../../styles/variable.scss';
+@import '../../styles//responsive.scss';
+
+.sidebarContainer {
+  width: 32rem;
+  background-color: #0097B2;
+  // border-right: .2px solid $soft-bg;
+  z-index: 99;
+
+  @include tablet {
+    position: absolute;
+    left: -40rem;
+    transition: .5s linear;
+  }
+
+  .sidebar {
+    background: #0097B2;
+    // background-color: red;
+    color: $colorBackgroundLight;
+    padding: 1.5rem;
+    transition: all .9s linear;
+    z-index: 99;
+    transition: 2s linear all;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      margin-bottom: 2rem;
+
+      .title {
+        font-size: 1.2rem;
+        font-weight: 200;
+        color: $colorBackgroundLight;
+      }
+
+      .listItem {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+        border-radius: .5rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        &:hover {
+          background-color: $soft-bg;
+        }
+
+        .listItemTitle {
+          color: $colorBackgroundLight;
+        }
+      }
+
+      .listItem.active {
+        background-color: #01527d;
+        // color: $colorBackgroundDark;
+      }
+    }
+  }
+}
+
+.sidebarContainer.on {
+  // position: absolute;
+  left: 0;
+  // width: 22rem;
+  transition: .5s linear;
+
+  @include phone {
+    width: 50%;
+  }
+}

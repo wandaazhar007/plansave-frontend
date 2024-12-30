@@ -1,0 +1,53 @@
+/*
+Author: Wanda Azhar
+Location: Michigan, USA
+Contact: wandaazhar@gmail.com
+*/
+
+@import '../../styles/variable.scss';
+@import '../../styles//responsive.scss';
+
+.navbar {
+  width: 100%;
+  // background: salmon;
+  // border: .1rem solid salmon;
+  border-bottom: .1rem solid rgb(227, 225, 225);
+  padding: .5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  .leftNavbar {
+    // border: .1rem solid green;
+
+    img {
+      width: 15rem;
+      // height: 5rem;
+    }
+  }
+
+  .rightNavbar {
+    // border: .1rem solid black;
+
+    .toogles {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      gap: 2rem;
+
+      .icon {
+        color: #000;
+        font-size: 1.6rem;
+        cursor: pointer;
+      }
+
+      .iconBars {
+        display: none;
+
+        @include tablet {
+          display: block;
+        }
+      }
+    }
+  }
+}
