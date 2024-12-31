@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import './navbar.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 
-import { NavbarContext } from '../../context/NavbarContext';
+// import { NavbarContext } from '../../context/NavbarContext';
 import { SidebarContext } from "../../context/SidebarContext";
 
 const Navbar: React.FC = () => {
