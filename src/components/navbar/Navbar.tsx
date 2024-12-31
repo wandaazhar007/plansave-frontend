@@ -7,9 +7,9 @@ import { NavbarContext } from '../../context/NavbarContext';
 import { SidebarContext } from "../../context/SidebarContext";
 
 const Navbar: React.FC = () => {
-  const navbarToggle: any = useContext(NavbarContext);
-  const activeNavbar = navbarToggle.active;
-  const triggerNavbar = navbarToggle.triggerNavbar;
+  // const navbarToggle: any = useContext(NavbarContext);
+  // const activeNavbar = navbarToggle.active;
+  // const triggerNavbar = navbarToggle.triggerNavbar;
 
   const sidebarToggle: any = useContext(SidebarContext);
   const activeSidebar = sidebarToggle.active;
@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
           <FontAwesomeIcon icon={faSearch} className="icon" />
           <FontAwesomeIcon icon={faUser} className="icon" />
           {activeSidebar ? (
-            <FontAwesomeIcon icon={faClose} className="icon iconClose" onClick={triggerSidebar} />
+            <FontAwesomeIcon icon={faClose} className="icon iconBars" onClick={triggerSidebar} />
           ) : (
             <FontAwesomeIcon icon={faBars} className="icon iconBars" onClick={triggerSidebar} />
           )}
