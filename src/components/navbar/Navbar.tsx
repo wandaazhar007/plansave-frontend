@@ -1,12 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import './navbar.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faClose, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBell, faClose, faGear, faGears, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 
 // import { NavbarContext } from '../../context/NavbarContext';
 import { SidebarContext } from "../../context/SidebarContext";
+import { faFonticons, faFonticonsFi } from "@fortawesome/free-brands-svg-icons";
 
 const Navbar: React.FC = () => {
+  const [profileActive, setProfileActive] = useState<boolean>(false);
+
+  const handleProfile = () => {
+    setProfileActive(!profileActive);
+  }
   // const navbarToggle: any = useContext(NavbarContext);
   // const activeNavbar = navbarToggle.active;
   // const triggerNavbar = navbarToggle.triggerNavbar;
@@ -25,7 +31,23 @@ const Navbar: React.FC = () => {
       <div className="rightNavbar">
         <div className="toogles">
           <FontAwesomeIcon icon={faSearch} className="icon" />
-          <FontAwesomeIcon icon={faUser} className="icon" />
+          <FontAwesomeIcon icon={faUser} className="icon" onClick={handleProfile} />
+          <div className={`profile ${profileActive ? 'on' : ''}`}>
+            <ul>
+              <li>
+                <FontAwesomeIcon icon={faUser} />
+                <span>Profile</span>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faGear} />
+                <span>Settings</span>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faBell} />
+                <span>Notifications</span>
+              </li>
+            </ul>
+          </div>
           {activeSidebar ? (
             <FontAwesomeIcon icon={faClose} className="icon iconBars" onClick={triggerSidebar} />
           ) : (

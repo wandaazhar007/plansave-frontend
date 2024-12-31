@@ -30,7 +30,9 @@ a {
 .main {
   font-family: "Inter", sans-serif;
   background-color: $colorBackgroundLight;
-
+  overflow: hidden;
+  // position: relative;
+  // z-index: -1;
 }
 
 
