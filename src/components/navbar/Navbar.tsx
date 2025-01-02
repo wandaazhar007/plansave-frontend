@@ -1,28 +1,45 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import './navbar.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBell, faClose, faGear, faGears, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
-
-// import { NavbarContext } from '../../context/NavbarContext';
+import { faBars, faBell, faClose, faGear, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { SidebarContext } from "../../context/SidebarContext";
-import { faFonticons, faFonticonsFi } from "@fortawesome/free-brands-svg-icons";
 
 const Navbar: React.FC = () => {
+  const dropdownRef = useRef<any>(null);
   const [profileActive, setProfileActive] = useState<boolean>(false);
+  const sidebarToggle: any = useContext(SidebarContext);
+  const activeSidebar = sidebarToggle.active;
+  const setActiveSidebar = sidebarToggle.setActive;
+
+  const handleClickOutsideSidebar = (e: any) => {
+    if (activeSidebar && !dropdownRef.current?.contains(e.target as Node)) {
+      setActiveSidebar(false)
+    }
+  }
+
+  const handleClickOutsideDropdownMenu = (e: any) => {
+    if (profileActive && !dropdownRef.current?.contains(e.target as Node)) {
+      setProfileActive(false)
+    }
+  }
+
+  window.addEventListener("click", (e: MouseEvent) => {
+    handleClickOutsideDropdownMenu(e);
+    handleClickOutsideSidebar(e);
+  });
 
   const handleProfile = () => {
     setProfileActive(!profileActive);
+    setActiveSidebar(false);
   }
-  // const navbarToggle: any = useContext(NavbarContext);
-  // const activeNavbar = navbarToggle.active;
-  // const triggerNavbar = navbarToggle.triggerNavbar;
 
-  const sidebarToggle: any = useContext(SidebarContext);
-  const activeSidebar = sidebarToggle.active;
-  const triggerSidebar = sidebarToggle.triggerSidebar;
+  const handleMenu = () => {
+    setActiveSidebar(!activeSidebar);
+    setProfileActive(false);
+  }
 
   return (
-    <section className="navbar">
+    <section className="navbar" ref={dropdownRef}>
       <div className="leftNavbar">
         <div className="logo">
           <img src="../../assets/icons/logo-navbar.png" alt="" />
@@ -31,7 +48,7 @@ const Navbar: React.FC = () => {
       <div className="rightNavbar">
         <div className="toogles">
           <FontAwesomeIcon icon={faSearch} className="icon" />
-          <FontAwesomeIcon icon={faUser} className="icon" onClick={handleProfile} />
+          <FontAwesomeIcon icon={faUser} className="icon" onClick={handleProfile} ref={dropdownRef} />
           <div className={`profile ${profileActive ? 'on' : ''}`}>
             <ul>
               <li>
@@ -49,18 +66,10 @@ const Navbar: React.FC = () => {
             </ul>
           </div>
           {activeSidebar ? (
-            <FontAwesomeIcon icon={faClose} className="icon iconBars" onClick={triggerSidebar} />
+            <FontAwesomeIcon icon={faClose} className="icon iconBars" onClick={handleMenu} />
           ) : (
-            <FontAwesomeIcon icon={faBars} className="icon iconBars" onClick={triggerSidebar} />
+            <FontAwesomeIcon icon={faBars} className="icon iconBars" onClick={handleMenu} />
           )}
-          {/* {activeNavbar ? (
-            <FontAwesomeIcon icon={faClose} className="icon iconClose" onClick={triggerNavbar} />
-
-          ) : (
-            <FontAwesomeIcon icon={faBars} className="icon iconClose" onClick={triggerNavbar} />
-
-          )} */}
-
         </div>
       </div>
     </section>

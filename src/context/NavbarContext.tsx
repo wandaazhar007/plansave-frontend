@@ -8,7 +8,7 @@ export const NavbarProvider = ({ children }: any) => {
 
   const triggerNavbar = () => {
     setActive(!active);
-    console.log('navbar', active)
+    // console.log('navbar', active)
   }
 
   const contextValue: any = {

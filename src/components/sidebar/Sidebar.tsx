@@ -6,13 +6,13 @@ import { menu } from "../../utils/Menu";
 
 const Sidebar: React.FC = () => {
   const currentPath = useLocation();
-  console.log(currentPath.pathname);
 
   const sidebarToggle: any = useContext(SidebarContext);
   const handleSidebar = () => {
     sidebarToggle.triggerSidebar();
   }
   const active = sidebarToggle.active;
+
 
   return (
     <div className={`sidebarContainer ${active ? 'on' : ''}`}>
