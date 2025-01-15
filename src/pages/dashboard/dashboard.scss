@@ -6,3 +6,16 @@ Contact: wandaazhar@gmail.com
 
 @import '../../styles/variable.scss';
 @import '../../styles//responsive.scss';
+
+
+.dashboard {
+  h1 {
+    font-size: 3.4rem;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+}

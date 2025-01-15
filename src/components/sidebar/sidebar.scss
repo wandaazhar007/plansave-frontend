@@ -12,6 +12,12 @@ Contact: wandaazhar@gmail.com
   background-color: #0097B2;
   // border-right: .2px solid $soft-bg;
   z-index: 99;
+  height: 87vh;
+  overflow: auto;
+
+  @include phone {
+    height: 83.5vh;
+  }
 
   @include tablet {
     position: absolute;
@@ -27,6 +33,7 @@ Contact: wandaazhar@gmail.com
     transition: all .9s linear;
     z-index: 99;
     transition: 2s linear all;
+    overflow: auto;
 
     .item {
       display: flex;

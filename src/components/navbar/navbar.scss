@@ -9,12 +9,13 @@ Contact: wandaazhar@gmail.com
 
 .navbar {
   width: 100%;
-  // background: green; 
+  // background: green;
   // border: .1rem solid salmon;
   border-bottom: .1rem solid rgb(227, 225, 225);
-  padding: .5rem 2rem;
+  padding: .5rem 4rem .5rem 2rem;
   display: flex;
   justify-content: space-between;
+  // position: fixed;
 
   .leftNavbar {
     // border: .1rem solid green;
@@ -32,13 +33,13 @@ Contact: wandaazhar@gmail.com
       align-items: center;
       height: 100%;
       gap: 2rem;
-      border: .1rem solid white;
+      // border: .1rem solid white;
 
       .profile {
         // border: .1rem solid salmon;
         background: #fff;
         width: 15rem;
-        height: 15rem;
+        height: 17rem;
         position: absolute;
         display: none;
         padding: 1rem;
@@ -48,7 +49,7 @@ Contact: wandaazhar@gmail.com
           li {
             list-style: none;
             // border: .1rem solid salmon;
-            border-bottom: .1rem solid rgb(158, 158, 158);
+            border-bottom: .01rem solid rgb(158, 158, 158);
             height: 4rem;
             display: flex;
             align-items: center;
@@ -57,6 +58,7 @@ Contact: wandaazhar@gmail.com
             flex-direction: row;
             align-items: center;
             gap: 1rem;
+            cursor: pointer;
             // justify-content: center;
           }
         }
@@ -64,10 +66,11 @@ Contact: wandaazhar@gmail.com
 
       .profile.on {
         // background-color: salmon;
-        border: .1rem solid rgb(234, 231, 231);
+        border: .01rem solid rgb(234, 231, 231);
         right: 2rem;
         top: 5.8rem;
         display: block;
+        // padding: 5rem;
       }
 
       .icon {

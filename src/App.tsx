@@ -29,7 +29,7 @@ function App() {
             <Footer />
           </div>
         </SidebarProvider>
-      </NavbarProvider>
+      </NavbarProvider >
     )
   }
 
