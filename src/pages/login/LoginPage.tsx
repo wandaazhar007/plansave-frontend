@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignIn } from '@fortawesome/free-solid-svg-icons';
-import { faApple, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+// import { faApple, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 
 
@@ -16,7 +16,7 @@ const LoginPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleLogin = async (e: any) => {
-    alert(password);
+    // alert(password);
     e.preventDefault();
     try {
       // await axios.post(import.meta.env.VITE_LOGIN, {
@@ -24,6 +24,7 @@ const LoginPage: React.FC = () => {
         email: email,
         password: password
       });
+      console.log(e.token);
       navigate('/');
     } catch (error: any) {
       if (error.response) {
@@ -48,7 +49,7 @@ const LoginPage: React.FC = () => {
           <div className="tagline">Login to your account</div>
           <div className="subTagline">Lorem, ipsum dolor Lorem, ipsum dolor.</div>
           <div className="errorMessage">
-            test
+            {msg}
           </div>
         </div>
         <div className="content">
@@ -68,7 +69,7 @@ const LoginPage: React.FC = () => {
             </div>
           </form>
         </div>
-        <div className="footer">
+        <div className="footerLogin">
           <div className="loginWith">
             <span>Or Login With</span>
           </div>
