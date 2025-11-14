@@ -1,0 +1,79 @@
+$primary: #000;
+$background: #fff;
+$grayText: #555;
+$borderLight: #e5e5e5;
+
+.section {
+  background: $background;
+  padding: 4rem 1.5rem 5rem 1.5rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.7rem;
+  }
+}
+
+.faqContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  width: 100%;
+}
+
+.questionRow {
+  width: 100%;
+  padding: 1.1rem 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: $primary;
+
+  span:first-child {
+    flex: 1;
+  }
+}
+
+.icon {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+}
+
+/* SMOOTH ACCORDION ANIMATION */
+.answerWrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.9s ease, opacity 0.9s ease;
+}
+
+.open {
+  max-height: 300px; // enough height for any answer
+  opacity: 1;
+}
+
+.answer {
+  color: $grayText;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  padding: 0.5rem 0 1rem 0;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: $borderLight;
+}

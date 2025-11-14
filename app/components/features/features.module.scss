@@ -1,0 +1,64 @@
+$primary: #000000;
+$background: #ffffff;
+$grayText: #555555;
+$lightGray: #f4f4f4;
+
+.featuresSection {
+  background: $lightGray;
+  margin-top: 4rem;
+  padding: 4rem 1.5rem;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.featuresBox {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.featureText {
+  flex: 1;
+
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $grayText;
+    line-height: 1.6;
+  }
+}
+
+.featureImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.placeholderVideo {
+  width: 100%;
+  max-width: 450px;
+  height: 260px;
+  background: $primary;
+  color: $background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}

@@ -1,0 +1,105 @@
+$primary: #000000;
+$background: #ffffff;
+$grayText: #555555;
+$lightGray: #f4f4f4;
+$borderLight: #e5e5e5;
+
+.section {
+  background: $background;
+  padding: 4rem 1.5rem 5rem 1.5rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+  }
+}
+
+.carouselWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+/* ARROW BUTTONS */
+
+.arrowButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid $borderLight;
+  background: $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: $primary;
+  transition: background 0.15s ease, transform 0.1s ease;
+
+  &:hover {
+    background: $lightGray;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 600px) {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+}
+
+.arrowRight {
+  justify-self: flex-end;
+}
+
+/* SCROLLABLE CARDS */
+
+.cardsContainer {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0;
+  scrollbar-width: none;
+  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+  }
+}
+
+.card {
+  flex: 0 0 320px;
+  background: $background;
+  border-radius: 18px;
+  border: 1px solid $borderLight;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+
+  @media (max-width: 600px) {
+    flex: 0 0 280px;
+  }
+}
+
+.quote {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: $grayText;
+  margin-bottom: 1.5rem;
+}
+
+.handle {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: $primary;
+}

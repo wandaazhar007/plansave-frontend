@@ -1,74 +1,228 @@
-$bg-color: #0d0d0d;
-$text-color: #ffffff;
-$input-bg: #1a1a1a;
-$input-border: #333;
-$button-bg: #2a7bfd;
-$button-hover: #1b5bd1;
+$primary: #000000;
+$background: #ffffff;
+$grayText: #555555;
+$borderLight: #e5e5e5;
+$inputBg: #f5f5f5;
 
-.loginContainer {
+.page {
+  min-height: 100vh;
+  background: $background;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: 4rem auto;
-  padding: 2rem;
-  background: $bg-color;
-  color: $text-color;
-  border-radius: 12px;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
 }
 
-.loginTitle {
-  font-size: 2rem;
-  font-weight: bold;
+.backLink {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  color: $grayText;
+  font-size: 0.9rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: $background;
+  border-radius: 18px;
+  border: 1px solid $borderLight;
+  padding: 2.5rem 2rem 2.2rem 2rem;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.04);
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.brandIcon {
+  font-size: 1.1rem;
+}
+
+.brandName {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.subheading {
+  text-align: center;
+  font-size: 0.95rem;
+  color: $grayText;
   margin-bottom: 1.5rem;
 }
 
-.input {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  background: $input-bg;
-  border: 1px solid $input-border;
-  border-radius: 6px;
-  color: $text-color;
+/* Tabs */
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: $inputBg;
+  border-radius: 999px;
+  padding: 0.15rem;
+  margin-bottom: 1.5rem;
 }
 
-.buttonPrimary {
-  width: 100%;
-  padding: 0.75rem;
-  background: $button-bg;
-  color: white;
+.tabButton {
   border: none;
-  border-radius: 6px;
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.55rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
   cursor: pointer;
-  margin-bottom: 0.75rem;
-  transition: 0.2s ease;
+  color: $grayText;
+}
 
-  &:hover {
-    background: $button-hover;
+.tabActive {
+  background: $background;
+  color: $primary;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+}
+
+/* Form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: $primary;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid $borderLight;
+  background: $inputBg;
+  padding: 0.7rem 0.8rem;
+  font-size: 0.95rem;
+  outline: none;
+
+  &:focus {
+    border-color: $primary;
+    background: $background;
   }
 }
 
-.buttonGoogle {
-  width: 100%;
-  padding: 0.75rem;
-  background: #ffffff;
-  color: #000000;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-bottom: 0.75rem;
+.error {
+  font-size: 0.85rem;
+  color: #c0392b;
 }
 
-.registerText {
+.primaryButton {
+  margin-top: 0.4rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background: $primary;
+  color: $background;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+
+  &:hover {
+    background: #111111;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+}
+
+/* Divider */
+
+.dividerRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.1rem 0 1rem 0;
+}
+
+.divider {
+  flex: 1;
+  height: 1px;
+  background: $borderLight;
+}
+
+.dividerLabel {
+  font-size: 0.75rem;
+  color: $grayText;
+}
+
+/* Google button */
+
+.googleButton {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid $borderLight;
+  background: $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+}
+
+.googleIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $background;
+  border: 1px solid $borderLight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.googleText {
+  font-size: 0.95rem;
+  color: $primary;
+}
+
+/* Terms */
+
+.terms {
+  margin-top: 0.9rem;
+  font-size: 0.78rem;
+  color: $grayText;
   text-align: center;
-  margin-top: 1rem;
 
   a {
-    color: $button-bg;
+    color: $primary;
     text-decoration: underline;
-
-    &:hover {
-      color: $button-hover;
-    }
   }
 }
