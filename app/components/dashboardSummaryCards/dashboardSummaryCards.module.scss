@@ -1,0 +1,55 @@
+$white: #ffffff;
+$border: #e5e7eb;
+$text: #111827;
+$muted: #6b7280;
+$positive: #16a34a;
+$negative: #dc2626;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: $white;
+  border-radius: 18px;
+  border: 1px solid $border;
+  padding: 1.2rem 1.3rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: $muted;
+  margin-bottom: 0.35rem;
+}
+
+.value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: $text;
+}
+
+.tagPositive,
+.tagNegative {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.tagPositive {
+  background: #dcfce7;
+  color: $positive;
+}
+
+.tagNegative {
+  background: #fee2e2;
+  color: $negative;
+}

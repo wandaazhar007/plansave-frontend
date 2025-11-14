@@ -1,0 +1,304 @@
+// $sidebarBg: #ffffff;
+// $border: #e5e7eb;
+// $text: #61697b;
+// $muted: #6b7280;
+// $highlight: #eef2ff;
+
+// .sidebar {
+//   width: 250px;
+//   background: $sidebarBg;
+//   border-right: 1px solid $border;
+//   padding: 1.5rem 1rem 1.5rem 1rem;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 2rem;
+//   position: sticky;
+//   top: 0;
+//   height: 100vh;
+
+//   @media (max-width: 900px) {
+//     position: fixed;
+//     left: -260px;
+//     top: 0;
+//     bottom: 0;
+//     z-index: 30;
+//     transition: left 0.2s ease-out;
+//   }
+// }
+
+// .open {
+//   @media (max-width: 900px) {
+//     left: 0;
+//   }
+// }
+
+// .backdrop {
+//   position: fixed;
+//   inset: 0;
+//   background: rgba(15, 23, 42, 0.45);
+//   z-index: 25;
+// }
+
+// .logoArea {
+//   display: flex;
+//   align-items: center;
+//   gap: 0.5rem;
+// }
+
+// .logoDot {
+//   width: 28px;
+//   height: 28px;
+//   border-radius: 8px;
+//   background: #040222;
+//   color: #ffffff;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-weight: 700;
+// }
+
+// .logoText {
+//   font-weight: 700;
+//   font-size: 1.05rem;
+//   color: $text;
+// }
+
+// .nav {
+//   flex: 1;
+//   overflow-y: auto;
+// }
+
+// .navSection {
+//   margin-bottom: 1.3rem;
+//   gap: .5rem;
+//   display: flex;
+//   flex-direction: column
+// }
+
+// .navSectionTitle {
+//   font-size: 0.75rem;
+//   text-transform: uppercase;
+//   color: $muted;
+//   letter-spacing: 0.06em;
+//   margin-bottom: 0.6rem;
+//   display: block;
+// }
+
+// .navItem {
+//   display: flex;
+//   align-items: center;
+//   gap: 0.7rem;
+//   width: 100%;
+//   border-radius: 10px;
+//   border: none;
+//   background: transparent;
+//   padding: 0.55rem 0.6rem;
+//   text-align: left;
+//   cursor: pointer;
+//   margin-bottom: 0.25rem;
+//   font-size: 0.93rem;
+//   color: $text;
+
+//   &:hover {
+//     background: #f3f4f6;
+//   }
+// }
+
+// .navItemActive {
+//   background: $highlight;
+// }
+
+// .icon {
+//   font-size: 1rem;
+//   width: 18px;
+//   color: $text;
+// }
+
+// .sidebarUser {
+//   margin-top: auto;
+//   display: flex;
+//   align-items: center;
+//   gap: 0.6rem;
+//   padding-top: 0.75rem;
+//   border-top: 1px solid $border;
+//   color: $text;
+// }
+
+// .sidebarAvatar {
+//   width: 32px;
+//   height: 32px;
+//   border-radius: 999px;
+//   background: #e5e7eb;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-weight: 600;
+//   color: $text;
+// }
+
+// .sidebarUserInfo {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .sidebarUserName {
+//   font-size: 0.8rem;
+//   color: $text;
+// }
+
+// .sidebarUserEmail {
+//   font-size: 0.75rem;
+//   color: $muted;
+// }
+
+$sidebarBg: #ffffff;
+$border: #e5e7eb;
+$text: #60697d;
+$muted: #6b7280;
+$highlight: #eef2ff;
+
+.sidebar {
+  width: 250px;
+  background: $sidebarBg;
+  border-right: 1px solid $border;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  @media (max-width: 900px) {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    bottom: 0;
+    z-index: 30;
+    transition: left 0.2s ease-out;
+  }
+}
+
+.open {
+  @media (max-width: 900px) {
+    left: 0;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  z-index: 25;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoDot {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.logoText {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.nav {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.navSection {
+  margin-bottom: 1.3rem;
+  gap: .5rem;
+  display: flex;
+  flex-direction: column
+}
+
+.navSectionTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: $muted;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  padding: 0.55rem 0.6rem;
+  text-align: left;
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+  font-size: 0.93rem;
+  color: $text;
+
+  &:hover {
+    background: #f3f4f6;
+  }
+}
+
+.navItemActive {
+  background: $highlight;
+}
+
+.icon {
+  font-size: 1rem;
+  width: 18px;
+}
+
+/* bottom user area */
+
+.sidebarUser {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid $border;
+}
+
+.sidebarAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.sidebarUserInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarUserName {
+  font-size: 0.8rem;
+  color: $text;
+}
+
+.sidebarUserEmail {
+  font-size: 0.75rem;
+  color: $muted;
+}
